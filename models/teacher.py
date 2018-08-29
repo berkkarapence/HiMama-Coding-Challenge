@@ -7,6 +7,7 @@ class Teacher(object):
     def __init__(self, first_name = "", last_name = "", teacher_id = None, clock_type = None, clock_time = None):
         self.first_name = first_name
         self.last_name = last_name
+        self.teacher_id = teacher_id
         self.clock_type = clock_type
         self.clock_time = clock_time
         

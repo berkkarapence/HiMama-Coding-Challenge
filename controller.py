@@ -38,9 +38,14 @@ def getTeacherById(teacherId):
         print "There was a problem with the database operation"
         
     if teacher_object:
-        teacher.setFirstName(teacher_object["firstName"])
-        teacher.setLastName(teacher_object["lastName"])
-        teacher.setTeacherId(teacher_object["teacherId"])
+        if "firstName" in teacher_object:
+            teacher.setFirstName(teacher_object["firstName"])
+            
+        if "lastName" in teacher_object:    
+            teacher.setLastName(teacher_object["lastName"])
+            
+        if "teacherId" in teacher_object:
+            teacher.setTeacherId(teacher_object["teacherId"])
     else:
         print "Could not find teacher with ID: ", teacherId
         return  
@@ -62,9 +67,14 @@ def getTeacherByFirstName(firstName):
         print "There was a problem with the database operation"
         
     if teacher_object:
-        teacher.setFirstName(teacher_object["firstName"])
-        teacher.setLastName(teacher_object["lastName"])
-        teacher.setTeacherId(teacher_object["teacherId"])
+        if "firstName" in teacher_object:
+            teacher.setFirstName(teacher_object["firstName"])
+            
+        if "lastName" in teacher_object:    
+            teacher.setLastName(teacher_object["lastName"])
+            
+        if "teacherId" in teacher_object:
+            teacher.setTeacherId(teacher_object["teacherId"])
     else:
         print "Could not find teacher with first Name: ", firstName
         return  
@@ -86,9 +96,14 @@ def getTeacherByLastName(lastName):
         print "There was a problem with the database operation"
         
     if teacher_object:
-        teacher.setFirstName(teacher_object["firstName"])
-        teacher.setLastName(teacher_object["lastName"])
-        teacher.setTeacherId(teacher_object["teacherId"])
+        if "firstName" in teacher_object:
+            teacher.setFirstName(teacher_object["firstName"])
+            
+        if "lastName" in teacher_object:    
+            teacher.setLastName(teacher_object["lastName"])
+            
+        if "teacherId" in teacher_object:
+            teacher.setTeacherId(teacher_object["teacherId"])
     else:
         print "Could not find teacher with family Name: ", lastName
         return  
@@ -116,7 +131,7 @@ def clock_in(clockInTime, teacherFirstName):
             '_id': teacher_object['_id']
         },
         {
-            "$set": {"clockInTime": now}
+            "$set": {"clockInTime": now, "clockType": "In"}
         })
         
     else:
@@ -146,10 +161,22 @@ def clock_out(clockOutTime, teacherFirstName):
             '_id': teacher_object['_id']
         },
         {
-            "$set": {"clockOutTime": now}
+            "$set": {"clockOutTime": now, "clockType": "Out"}
         })
         
     else:
         print "Could not find teacher with first Name: ", teacherFirstName
         return  
+        
+
+def teacher_database_insert(first_name):
+    '''
+    Create new teacher object
+    '''
+    try:
+        db.teachers.insert({
+            "firstName": first_name
+        })
+    except:
+        print "Invalid Operation"
     

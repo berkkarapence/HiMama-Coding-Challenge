@@ -6,6 +6,7 @@ import controller
 
 app = Flask(__name__)
 
+## Application Logic
 
 @app.route("/")
 def index():
@@ -29,6 +30,11 @@ def getTeacher():
         teacher_id = teacher.getTeacherId()
         clock_type = teacher.getClockType()
         clock_time = teacher.getClockTime()
+    else:
+        controller.teacher_database_insert(first_name)
+        created_teacher = controller.getTeacherByFirstName(first_name)
+        if created_teacher:
+            teacher_first_name = created_teacher["firstName"]
     
     return redirect(url_for("index"))
     
