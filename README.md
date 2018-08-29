@@ -7,6 +7,8 @@ python app.py
 
 Then go to localhost:5000 in Google Chrome to view the app.
 
+(Refresh the page to start again)
+
 ## Use Case
 Enter "Jane" (test teacher object that I created on mLab) as first name. If it cannot find a teacher with first name "Jane" it will insert a new one to the database. 
 
