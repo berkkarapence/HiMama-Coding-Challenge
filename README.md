@@ -5,6 +5,8 @@ Run the app by typing the following command from the project root directory:
 
 python app.py
 
+(You might need to install Flask & PyMongo -- type: pip install flask and pip install pymongo to download the dependencies)
+
 Then go to localhost:5000 in Google Chrome to view the app.
 
 (Refresh the page to start again)
