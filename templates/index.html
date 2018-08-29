@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../static/js/controller.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+<h2>HiMama Coding Challenge</h2>
+<br/>
+
+<div id="teacherdiv" style="visibility: hidden">
+	<h4 id="welcome">{{last_name}}</h4>
+
+	<button id="clockin">Clock In</button>
+	<button id="clockout">Clock Out</button>
+	<p id="clocktext"></p>
+	<input id="clockintime" style="visibility: hidden"></input>
+	<p id="totalwork"></p>
+
+	<p style="visibility: hidden"></p>
+</div>
+
+<div id="start">
+	<h3>Enter Your First Name to Clock In</h3>
+	<form id="getteacher" method="get">
+	    <span class="fNamelabel">Enter your first name: </span>
+	    <input type="text" id="teacherfirstname"><br><br>
+	    <button id="fnamebutton" type="submit">Submit</button>
+	</form> 
+</div>
+
+</body>
+</html>
