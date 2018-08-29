@@ -18,13 +18,6 @@ db = client['himama-dev']
 jane = Teacher()
 
 
-def test():
-    
-    jane.setFirstName("ali")
-    a = jane.getFirstName()
-    return a
-
-
 def getTeacherById(teacherId):
     '''
     Get Teacher object from database using their Teacher ID
